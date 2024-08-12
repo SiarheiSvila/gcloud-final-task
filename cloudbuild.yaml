@@ -9,7 +9,7 @@ steps:
 
 - id: docker-build-and-push
   name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/final-task/final-task:latest', '.']
+  args: ['build', '-t', 'europe-west1-docker.pkg.dev/cloud-x-432119/final-task/final-task:latest', '.']
 
 - id: deploy-to-k8s
   name: "gcr.io/cloud-builders/gke-deploy"

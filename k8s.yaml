@@ -28,4 +28,4 @@ spec:
     spec:
       containers:
       - name: sample-app-container
-        image: europe-west1-docker.pkg.dev/$PROJECT_ID/final-task/final-task:latest
+        image: europe-west1-docker.pkg.dev/cloud-x-432119/final-task/final-task:latest
