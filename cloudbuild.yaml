@@ -9,7 +9,7 @@ steps:
   id: 'MAVEN'
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'europe-central2-docker.pkg.dev/$PROJECT_ID/final-task/final-task:latest', '.']
-images: ['europe-central2-docker.pkg.dev/$PROJECT_ID/final-task/final-task:latest']
+  args: ['build', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/final-task/final-task:latest', '.']
+images: ['europe-west1-docker.pkg.dev/$PROJECT_ID/final-task/final-task:latest']
 options:
   logging: CLOUD_LOGGING_ONLY
