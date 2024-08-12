@@ -1,12 +1,11 @@
 steps:
-# Pull the latest version of gcr.io/cloud-builders/mvn
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['pull', 'gcr.io/cloud-builders/mvn:3.5.0-jdk-8']
+- name: maven:3.3-jdk-8
+  entrypoint: mvn
+  args: ['clean']
 
-# Build the maven project, omitting the docker build step
-- name: 'gcr.io/cloud-builders/mvn:3.5.0-jdk-8'
-  args: ['-B', '-P-local-docker-build', 'clean', 'install']
-  id: 'MAVEN'
+- name: maven:3.3-jdk-8
+  entrypoint: mvn
+  args: ['package','-Dmaven.test.skip=true']
 
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/final-task/final-task:latest', '.']
