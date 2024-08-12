@@ -1,10 +1,8 @@
 steps:
-- name: maven:3.6.3-jdk-17
-  entrypoint: mvn
+- name: gcr.io/cloud-builders/mvn:3.9.1'
   args: ['clean']
 
-- name: maven:3.6.3-jdk-17
-  entrypoint: mvn
+- name:  gcr.io/cloud-builders/mvn:3.9.1'
   args: ['package','-Dmaven.test.skip=true']
 
 - name: 'gcr.io/cloud-builders/docker'
