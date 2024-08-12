@@ -8,9 +8,6 @@ steps:
   args: ['-B', '-P-local-docker-build', 'clean', 'install']
   id: 'MAVEN'
 
-# Execute the docker build
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '--tag=${_IMAGE}', '--no-cache', 'java-runtime-builder-docker/target/classes/docker']
-  id: 'DOCKER'
-
-images: ['${_IMAGE}']
+  args: ['build', '-t', 'europe-central2-docker.pkg.dev/$PROJECT_ID/final-task/final-task:latest', '.']
+images: ['europe-central2-docker.pkg.dev/$PROJECT_ID/final-task/final-task:latest']
