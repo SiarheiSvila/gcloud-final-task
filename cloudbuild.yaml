@@ -1,14 +1,14 @@
 steps:
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['pull', 'gcr.io/cloud-builders/mvn:3.9.1']
-
-- name: 'gcr.io/cloud-builders/mvn:3.9.1'
+- id: maven-clean
+  name: 'gcr.io/cloud-builders/mvn:3.9.1'
   args: ['clean']
 
-- name:  'gcr.io/cloud-builders/mvn:3.9.1'
+- id: maven-package
+  name:  'gcr.io/cloud-builders/mvn:3.9.1'
   args: ['package','-Dmaven.test.skip=true']
 
-- name: 'gcr.io/cloud-builders/docker'
+- id: docker-build-and-push
+  name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/final-task/final-task:latest', '.']
 images: ['europe-west1-docker.pkg.dev/$PROJECT_ID/final-task/final-task:latest']
 options:
