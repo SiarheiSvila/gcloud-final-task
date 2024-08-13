@@ -4,7 +4,7 @@ atabaseChangeLog:
        author: ssvila
        changes:
        - createTable:
-           tableName: postgres
+           tableName: vals
            columns:
            - column:
                name: id

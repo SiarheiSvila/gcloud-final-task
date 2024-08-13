@@ -57,14 +57,14 @@ spec:
           requests:
             memory: "2Gi"
             cpu:    "1"
-      initContainers:
-          - name: liquibase
-            image: liquibase/liquibase:latest
-            command: ["liquibase", "update", "--changeLogFile=/liquibase/changelog/changelog.xml"]
-            env:
-            - name: LIQUIBASE_URL
-              value: "jdbc:postgresql://127.0.0.1:5432/postgres"
-            - name: LIQUIBASE_USERNAME
-              value: "myuser"
-            - name: LIQUIBASE_PASSWORD
-              value: "mypassword"
+      # initContainers:
+      #     - name: liquibase
+      #       image: liquibase/liquibase:latest
+      #       command: ["liquibase", "update", "--changeLogFile=/liquibase/changelog/changelog.xml"]
+      #       env:
+      #       - name: LIQUIBASE_URL
+      #         value: "jdbc:postgresql://127.0.0.1:5432/postgres"
+      #       - name: LIQUIBASE_USERNAME
+      #         value: "myuser"
+      #       - name: LIQUIBASE_PASSWORD
+      #         value: "mypassword"
