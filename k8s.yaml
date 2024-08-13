@@ -19,7 +19,7 @@ metadata:
   labels:
     app: sample-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: sample-app
@@ -32,6 +32,7 @@ spec:
       containers:
       - name: sample-app-container
         image: europe-west1-docker.pkg.dev/cloud-x-432119/final-task/final-task:latest
+        imagePullPolicy: Always
       - name: cloud-sql-proxy
         image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.11.4
         args:
