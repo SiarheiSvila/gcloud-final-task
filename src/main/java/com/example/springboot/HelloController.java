@@ -25,7 +25,7 @@ public class HelloController {
 	public List<String> printSecrets() {
 		System.out.println("Let's inspect the beans provided by Spring Boot:");
 
-		return this.jdbcTemplate.queryForList("SELECT * FROM val").stream()
+		return this.jdbcTemplate.queryForList("SELECT * FROM vals").stream()
 				.map((m) -> m.values().toString())
 				.collect(Collectors.toList());
 	}
