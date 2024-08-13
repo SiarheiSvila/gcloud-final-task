@@ -7,7 +7,7 @@ steps:
   name:  'gcr.io/cloud-builders/mvn:3.9.1'
   args: ['package','-Dmaven.test.skip=true']
 
-- id: docker-build-and-push
+- id: docker-build
   name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'europe-west1-docker.pkg.dev/cloud-x-432119/final-task/final-task:latest', '.']
 
