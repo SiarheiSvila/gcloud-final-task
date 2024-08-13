@@ -1,4 +1,4 @@
-atabaseChangeLog:
+databaseChangeLog:
    - changeSet:
        id: 1
        author: ssvila
