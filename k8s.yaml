@@ -4,12 +4,12 @@ metadata:
   name: app-serivce-account
 
 ---
-apiVersion: apps/v1
+apiVersion: v1
 kind: Service
 metadata:
   name: app-service
 spec:
-  type: LodeBalancer
+  type: LoadBalancer
   selector:
     app: sample-app
   ports:
@@ -18,7 +18,7 @@ spec:
       targetPort: 8080
 
 ---
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app-deployment
