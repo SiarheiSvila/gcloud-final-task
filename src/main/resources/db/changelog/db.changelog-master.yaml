@@ -1,6 +1,6 @@
 databaseChangeLog:
    - changeSet:
-       id: 1
+       id: 1.0
        author: ssvila
        changes:
        - createTable:
@@ -9,9 +9,32 @@ databaseChangeLog:
            - column:
                name: id
                type: INT
+               autoIncrement: true
                constraints:
                    primaryKey:  true
                    nullable:  false
            - column:
                name: name
                type: VARCHAR(225)
+    - changeSet:
+        id: 1.1
+        author: ssvila
+        changes:
+        - insert:
+            tableName: vals
+            columns:
+            - column:
+                name: id
+                value: "1"
+            - column:
+                name: name
+                value: "One"
+        - insert:
+            tableName: vals
+            columns:
+            - column:
+                name: id
+                value: "2"
+            - column:
+                name: name
+                value: "Two"

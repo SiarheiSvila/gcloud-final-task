@@ -31,10 +31,7 @@ public class HelloController {
 
 	@GetMapping("/create")
 	public String printSecrets(@RequestParam String name) {
-		jdbcTemplate.update(
-			"INSERT INTO vals(name) VALUES (?)",
-			name
-		);
+		jdbcTemplate.update("INSERT INTO vals(name) VALUES (?)", name);
 
 		return "OK";
 	}
