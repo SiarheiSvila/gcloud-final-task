@@ -1,0 +1,17 @@
+atabaseChangeLog:
+   - changeSet:
+       id: 1
+       author: ssvila
+       changes:
+       - createTable:
+           tableName: postgres
+           columns:
+           - column:
+               name: id
+               type: INT
+               constraints:
+                   primaryKey:  true
+                   nullable:  false
+           - column:
+               name: name
+               type: VARCHAR(225)
