@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.jdbc.core.JdbcTemplate;
 import java.util.List;
 import java.util.stream.Collectors;
-import org.springframework.boot.SpringApplication;
 
 @RestController
 public class HelloController {

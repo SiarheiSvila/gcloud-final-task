@@ -1,19 +1,19 @@
 databaseChangeLog:
-   - changeSet:
+    - changeSet:
        id: 1.0
        author: ssvila
        changes:
-       - createTable:
+        - createTable:
            tableName: vals
            columns:
-           - column:
+            - column:
                name: id
                type: INT
                autoIncrement: true
                constraints:
                    primaryKey:  true
                    nullable:  false
-           - column:
+            - column:
                name: name
                type: VARCHAR(225)
     - changeSet:
