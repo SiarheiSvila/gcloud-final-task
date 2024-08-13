@@ -11,6 +11,10 @@ steps:
   name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'europe-west1-docker.pkg.dev/cloud-x-432119/final-task/final-task:latest', '.']
 
+- id: docker-push
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'europe-west1-docker.pkg.dev/cloud-x-432119/final-task/final-task:latest']
+
 - id: deploy-to-k8s
   name: "gcr.io/cloud-builders/gke-deploy"
   args:
@@ -19,7 +23,6 @@ steps:
   - --location=europe-west1
   - --cluster=final-task
 
-images: 
-- 'europe-west1-docker.pkg.dev/cloud-x-432119/final-task/final-task:latest'
+
 options:
   logging: CLOUD_LOGGING_ONLY
