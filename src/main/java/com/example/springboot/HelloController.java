@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.jdbc.core.JdbcTemplate;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.springframework.boot.SpringApplication;
 
 @RestController
 public class HelloController {
@@ -22,6 +23,8 @@ public class HelloController {
 
 	@GetMapping("/query")
 	public List<String> printSecrets() {
+		System.out.println("Let's inspect the beans provided by Spring Boot:");
+
 		return this.jdbcTemplate.queryForList("SELECT * FROM val").stream()
 				.map((m) -> m.values().toString())
 				.collect(Collectors.toList());

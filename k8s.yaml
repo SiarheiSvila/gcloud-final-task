@@ -41,7 +41,7 @@ spec:
           # - "--private-ip"
           - "--structured-logs"
           - "--port=5432"
-          - "test-db"
+          - "cloud-x-432119:europe-west1:test-db"
         resources:
           requests:
             memory: "2Gi"
